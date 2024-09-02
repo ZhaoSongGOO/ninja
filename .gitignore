@@ -3,6 +3,7 @@
 *.exe
 *.pdb
 *.ilk
+demo
 /build*/
 /build.ninja
 /ninja

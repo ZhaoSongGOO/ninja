@@ -42,6 +42,8 @@ else()
 		set(CMAKE_COLOR_DIAGNOSTICS ON)
 	endif()
 
+	add_compile_options(-g)
+
 	if(NOT NINJA_FORCE_PSELECT)
 		# Check whether ppoll() is usable on the target platform.
 		# Set -DUSE_PPOLL=1 if this is the case.
