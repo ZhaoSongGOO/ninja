@@ -1,0 +1,23 @@
+
+rule cc
+    command = clang -c $in -o $out -MMD -MP -MF $out.d -I. -g
+    description = "Example compile $in to $out"
+    deps = gcc
+    depfile = $out.d
+
+
+rule link
+    command = clang -o $out $in
+    description = "Example link $in to $out"
+
+
+build main.o: cc main.c
+
+build lib.o: cc lib.c
+
+build base.o: cc base.c
+
+build run: link main.o lib.o base.o
+
+
+
